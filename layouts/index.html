@@ -17,15 +17,6 @@
             {{- end }}
         </div>
 
-    {{ $paginator := .Paginate .Data.Pages }}
-    
-    <main class="posts">
-
-        {{ if .Content }}
-            <div class="content">{{ .Content }}</div>
-        {{ end }}
-
-
                 <ul class="posts-list">
 
 			   {{ range ( where site.RegularPages "Section" "posts" | first 3 ) }}
@@ -44,8 +35,6 @@
                         </li>
                     {{ end }}
                 </ul>
-    {{ partial "pagination.html" . }}
-    </main>
 
     </main>
 {{ end }}
